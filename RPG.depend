@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1317354941 source:/home/obct537/Desktop/RPG/General.cpp
+1317516194 source:/home/obct537/Desktop/RPG/General.cpp
 	<cstdlib>
 	<iostream>
 	<string>
 	<cstring>
+	<stdio.h>
 	<stdlib.h>
 	"items.h"
 

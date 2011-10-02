@@ -1,0 +1,33 @@
+#!/bin/bash 
+
+
+FILE=items.txt
+echo "How many items?"
+read NUM
+
+echo $NUM
+
+for ((i=1; i<=$NUM; i++ ))
+do 
+
+echo "Name:"
+read NAME
+
+echo "Value:"
+read VALUE
+
+echo "Type:"
+echo "1: Weapon"
+echo "2: Armor"
+echo "3: Item"
+read TYPE
+
+echo "Rating:"
+echo "If it's an item, enter i"
+read RATING
+
+
+MESS="$NAME, $VALUE, $TYPE, $RATING"
+echo $MESS >> $FILE;
+
+done
