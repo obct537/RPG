@@ -16,7 +16,6 @@ using namespace std;
 
 void save(player e)
 {
-    cout << e.getItems() << endl;
 	ofstream Saved;
 	Saved.open("save.txt");
 	Saved << e.getAttack() << endl;
@@ -118,7 +117,7 @@ int main()
 
 	//setItemList(itemNum, listOfItems, stuff2);
 
-	//me.addItem(1);
+	me.addItem(1);
 	me.listItems(stuff2);
 
 

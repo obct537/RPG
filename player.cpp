@@ -117,7 +117,7 @@ void player::listItems(itemz *e[])
 		if ( inven[i] != 0 )
 		{
 			int num = inven[i];
-			cout << endl << "num: " << i << inven[i];// << " " << e[num]->getName();
+			cout << endl << "num: " << i << inven[i] << endl;// << " " << e[num]->getName();
 			i++;
 		}
 		else if ( inven[i] == 0 )
@@ -134,5 +134,5 @@ int player::getItem(int e)
 
 int player::getItems()
 {
-    return sizeof(inven);
+    return sizeof(inven)/sizeof(int);
 }
