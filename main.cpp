@@ -17,18 +17,17 @@ using namespace std;
 void save(player e)
 {
     cout << e.getItems() << endl;
-	FILE *Saved;
-	Saved = fopen("save.txt", "w");
-	cout << e.getAttack() << endl;
-	cout << e.getDefense() << endl;
-	cout << e.getHealth() << endl;
-	cout << e.getLevel();
+	ofstream Saved;
+	Saved.open("save.txt");
+	Saved << e.getAttack() << endl;
+	Saved << e.getDefense() << endl;
+	Saved << e.getHealth() << endl;
+	Saved << e.getLevel();
 
 	for (int i = 0; i <= 50; i++)
 	{
-		cout << endl << e.getItem(i);
+		Saved << endl << e.getItem(i);
 	}
-	fclose(Saved);
 }
 
 
