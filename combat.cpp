@@ -6,7 +6,7 @@
 #include "enemies.h"
 
 
-double encounter(player *a, player b, nmeType c)
+double encounter(player *a, player b, nmeType *c)
 {
 
 	double ran;
@@ -67,7 +67,7 @@ double encounter(player *a, player b, nmeType c)
 
 
 
-	cout << endl << "You've encountered a level " << b.getLevel() << " " << c.getName();
+	cout << endl << "You've encountered a level " << b.getLevel() << " " << c->getName();
 	cout << endl << "Health: " << b.getHealth();
 	cout << endl << "Attack: " << b.getAttack();
 	cout << endl << "Defense: " << b.getDefense();
@@ -134,8 +134,8 @@ double encounter(player *a, player b, nmeType c)
 	{
 		cout << endl << "You Win!!!" << endl;
 		cout << endl << "drop: " << ran2;
-		cout << endl << c.getName() << " dropped a " << c.getWep(ran2);
-		a->addItem(c.getWep(ran2));
+		cout << endl << c->getName() << " dropped a " << c->getWep(ran2);
+		a->addItem(c->getWep(ran2));
 	}
 
 	return a->getHealth();

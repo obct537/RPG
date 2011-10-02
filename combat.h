@@ -3,7 +3,7 @@
 
 #include <cmath>
 
-double encounter(player *a, player b, nmeType c);
+double encounter(player *a, player b, nmeType *c);
 double dropz(nmeType a);
 
 #endif

@@ -13,14 +13,14 @@
 	<string>
 	<cmath>
 
-1317354946 source:/home/obct537/Desktop/RPG/combat.cpp
+1317524545 source:/home/obct537/Desktop/RPG/combat.cpp
 	<iostream>
 	<string>
 	<cmath>
 	"player.h"
 	"enemies.h"
 
-1317354950 /home/obct537/Desktop/RPG/player.h
+1317521949 /home/obct537/Desktop/RPG/player.h
 	<iostream>
 	<fstream>
 	<string>
@@ -47,9 +47,8 @@
 	<string>
 	"items.h"
 
-1317354590 source:/home/obct537/Desktop/RPG/main.cpp
+1317524924 source:/home/obct537/Desktop/RPG/main.cpp
 	<iostream>
-	<fstream>
 	<fstream>
 	<string>
 	<stdlib.h>
@@ -63,10 +62,10 @@
 	<iostream>
 	<string>
 
-1317354206 /home/obct537/Desktop/RPG/combat.h
+1317523195 /home/obct537/Desktop/RPG/combat.h
 	<cmath>
 
-1317354978 source:/home/obct537/Desktop/RPG/player.cpp
+1317524779 source:/home/obct537/Desktop/RPG/player.cpp
 	<iostream>
 	<fstream>
 	<string>

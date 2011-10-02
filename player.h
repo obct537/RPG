@@ -42,6 +42,7 @@ public:
 	void load();
 	void chargen();
 	void endFight(double);
+	int getItems();
 
 
 };

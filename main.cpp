@@ -3,7 +3,6 @@
 //#include "stdafx.h"
 #include <iostream>
 #include <fstream>
-#include <fstream>
 #include <string>
 #include <stdlib.h>
 #include "player.h"
@@ -13,22 +12,23 @@
 #include "combat.h"
 
 using namespace std;
-//test
 
 
 void save(player e)
 {
-	std::ofstream Saved;
-	Saved.open("save.txt", ios::out);
-	Saved << e.getAttack() << endl;
-	Saved << e.getDefense() << endl;
-	Saved << e.getHealth() << endl;
-	Saved << e.getLevel();
+    cout << e.getItems() << endl;
+	FILE *Saved;
+	Saved = fopen("save.txt", "w");
+	cout << e.getAttack() << endl;
+	cout << e.getDefense() << endl;
+	cout << e.getHealth() << endl;
+	cout << e.getLevel();
 
 	for (int i = 0; i <= 50; i++)
 	{
-		Saved << endl << e.getItem(i);
+		cout << endl << e.getItem(i);
 	}
+	fclose(Saved);
 }
 
 
@@ -86,6 +86,9 @@ int main()
 	Ogre.setName("Ogre");
 	Ogre.addDrop(1,2);
 
+    nmeType *Ogre2;
+	Ogre2 = &Ogre;
+
 
 	if  (yn == 1)
 	{
@@ -104,7 +107,7 @@ int main()
 
 
 
-	me.endFight(encounter(me2, enemy, Ogre));
+    me.endFight(encounter(me2, enemy, Ogre2));
 
 	itemz stuff[itemNum];
 
@@ -116,7 +119,7 @@ int main()
 
 	//setItemList(itemNum, listOfItems, stuff2);
 
-	me.addItem(1);
+	//me.addItem(1);
 	me.listItems(stuff2);
 
 

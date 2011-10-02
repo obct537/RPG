@@ -83,9 +83,12 @@ void player::load()
 
 void player::addItem(int e)
 {
-	int i;
+	int i = 0;
 	int q;
 
+    /*int size;
+    size=sizeof inven/sizeof(int);
+    cout << size;*/
 	do
 	{
 		if ( inven[i] == 0 )
@@ -95,6 +98,7 @@ void player::addItem(int e)
 		}
 		i++;
 	} while ( q != 1 );
+
 }
 
 void player::endFight(double e)
@@ -126,4 +130,9 @@ void player::listItems(itemz *e[])
 int player::getItem(int e)
 {
 	return inven[e];
+}
+
+int player::getItems()
+{
+    return sizeof(inven);
 }
