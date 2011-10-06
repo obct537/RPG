@@ -19,6 +19,7 @@ private:
 	double armRate;
 
 public:
+    void buildItemList(int);
 	string getName();
 	double getValue();
 	int getType();

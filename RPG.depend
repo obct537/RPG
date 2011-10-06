@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1317516194 source:/home/obct537/Desktop/RPG/General.cpp
+1317568423 source:/home/obct537/Desktop/RPG/General.cpp
 	<cstdlib>
 	<iostream>
 	<string>
@@ -8,19 +8,19 @@
 	<stdlib.h>
 	"items.h"
 
-1317354602 /home/obct537/Desktop/RPG/items.h
+1317602903 /home/obct537/Desktop/RPG/items.h
 	<iostream>
 	<string>
 	<cmath>
 
-1317524545 source:/home/obct537/Desktop/RPG/combat.cpp
+1317868881 source:/home/obct537/Desktop/RPG/combat.cpp
 	<iostream>
 	<string>
 	<cmath>
 	"player.h"
 	"enemies.h"
 
-1317521949 /home/obct537/Desktop/RPG/player.h
+1317579208 /home/obct537/Desktop/RPG/player.h
 	<iostream>
 	<fstream>
 	<string>
@@ -42,12 +42,14 @@
 	<string>
 	"enemies.h"
 
-1317354970 source:/home/obct537/Desktop/RPG/items.cpp
+1317868514 source:/home/obct537/Desktop/RPG/items.cpp
 	<iostream>
 	<string>
+	<fstream>
+	<sstream>
 	"items.h"
 
-1317534096 source:/home/obct537/Desktop/RPG/main.cpp
+1317867177 source:/home/obct537/Desktop/RPG/main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -58,14 +60,14 @@
 	"General.h"
 	"combat.h"
 
-1317354378 /home/obct537/Desktop/RPG/General.h
+1317568047 /home/obct537/Desktop/RPG/General.h
 	<iostream>
 	<string>
 
 1317523195 /home/obct537/Desktop/RPG/combat.h
 	<cmath>
 
-1317534171 source:/home/obct537/Desktop/RPG/player.cpp
+1317579319 source:/home/obct537/Desktop/RPG/player.cpp
 	<iostream>
 	<fstream>
 	<string>

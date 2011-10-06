@@ -6,6 +6,7 @@
 
 void center(char[]);
 void divider();
+void clearScreen(int e);
 //void setItemList(int, string[], itemz *e[]);
 
 #endif

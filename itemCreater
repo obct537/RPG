@@ -27,7 +27,7 @@ echo "If it's an item, enter i"
 read RATING
 
 
-MESS="$NAME, $VALUE, $TYPE, $RATING"
+MESS="$NAME $VALUE $TYPE $RATING"
 echo $MESS >> $FILE;
 
 done

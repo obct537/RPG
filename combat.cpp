@@ -5,6 +5,44 @@
 #include "player.h"
 #include "enemies.h"
 
+void doDamage(player *user, player *nme)
+{
+    int opt = 0;
+    int armRate2 = 10;
+    int wepEff1 = 10;
+    player *a;
+    player *b;
+    string pov;
+    do
+    {
+        if( opt == 0 )
+        {
+            a = user;
+            b = nme;
+            pov = "Your";
+            opt++;
+
+        }
+        else
+        {
+            a = nme;
+            b = user;
+            pov = "Enemy";
+            opt = 0;
+        }
+
+
+        int damage = ((a->getAttack() * .25) + (a->getLevel() * .25 ) + (wepEff1 * .5));
+        int defense = ((b->getDefense() * .25) + (b->getLevel() * .25 ) + (armRate2 * .5));
+
+        //Bethesda damage engine
+        cout << "Damage: " << ceil((damage * damage) / (damage + defense)) << endl;
+        b->setHealth(b->getHealth() - floor((damage * damage) / (damage + defense)));
+        cout << pov << " health: " << b->getHealth() << endl;
+
+    }while( user->getHealth() > 0 && nme->getHealth() > 0 );
+}
+
 
 double encounter(player *a, player b, nmeType *c)
 {
@@ -91,39 +129,8 @@ double encounter(player *a, player b, nmeType *c)
 
 	opt = 1;
 
-
-	do
-	{
-
-		//this is all simple math, just read through it
-
-		if ( opt == 1 )
-		{
-			damage = ((a->getAttack() * .25) + (a->getLevel() * .25 ) + (wepEff1 * .5));
-			defense = ((b.getDefense() * .25) + (b.getLevel() * .25 ) + (armRate2 * .5));
-
-			//Bethesda damage engine
-			cout << "Damage: " << ceil((damage * damage) / (damage + defense)) << endl;
-			b.setHealth(b.getHealth() - floor((damage * damage) / (damage + defense)));
-			cout << "Enemy health: " << b.getHealth() << endl;
-
-			opt++;
-		}
-
-		else if ( opt == 2 )
-		{
-			damage = ((b.getAttack() * .25) /*+ (b.getLevel() * .25 )*/ + (wepEff1 * .5));
-			defense = ((a->getDefense() * .25) + /*(a.getLevel() * .25 )*/ + (armRate2 * .5));
-
-			//Bethesda damage engine
-			cout << "Damage: " << ceil((damage * damage) / (damage + defense)) << endl;
-			a->setHealth(a->getHealth() - ceil((damage * damage) / (damage + defense)));
-			cout << "Your health: " << a->getHealth() << endl;
-			opt = 1;
-		}
-
-	} while ( a->getHealth() > 0 && b.getHealth() > 0);
-
+    player *g = &b;
+    doDamage(a, g);
 
 
 	if ( a->getHealth() <= 0)
@@ -140,3 +147,4 @@ double encounter(player *a, player b, nmeType *c)
 
 	return a->getHealth();
 }
+

@@ -28,6 +28,12 @@ void divider()
 	cout << div << div << endl;
 }
 
+void clearScreen(int len)
+{
+    cout << string(len, '\n');
+}
+
+
 /*void setItemList(int e, string b[], itemz *z[])
 {
 	for (int i = 0; i <= e; i++)

@@ -27,7 +27,7 @@ public:
 	void setAttack(double);
 	void setDefense(double);
 	void setLevel(double);
-	void listItems(itemz *e[]);
+	void listItems(itemz e[]);
 	double getHealth();
 	double getAttack();
 	double getDefense();

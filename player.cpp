@@ -106,18 +106,17 @@ void player::endFight(double e)
 	health = e;
 }
 
-void player::listItems(itemz *e[])
+void player::listItems(itemz e[])
 {
 	int i = 0;
 	int q;
-
 
 	do
 	{
 		if ( inven[i] != 0 )
 		{
 			int num = inven[i];
-			cout << endl << "num: " << i << inven[i] << endl;// << " " << e[num]->getName();
+			cout << endl << "num: " << inven[i] << " " << e[num].getName();
 			i++;
 		}
 		else if ( inven[i] == 0 )

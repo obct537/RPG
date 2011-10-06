@@ -45,11 +45,12 @@ int main()
 	char welcome[40] = "Welcome to INSERT_NAME";
 	char welcome2[60] = "would you like to continue an old adventure?";
 	char welcome3[40] = "Or start a new one?";
-
+    int screenLen = 50;
 
 
 	const int itemNum = 80;
 	string listOfItems[itemNum];
+
 
 	//===================================================================================================
 	//===================================================================================================
@@ -69,14 +70,13 @@ int main()
 	player *me2;
 	me2 = &me;
 
-
-	char x[40];
 	//for now, yn is the decision variable, its to be used whenever a choice has to be made
 	//looking into a way to make decisions without a variable, so as to avoid scope/redundancy issues
 	//considering making a global decision function with a private var to do this
 	int yn;
 	cin >> yn;
 
+    clearScreen(screenLen);
 	nmeType Ogre;
 	Ogre.setAttack(3);
 	Ogre.setDefense(6);
@@ -104,26 +104,37 @@ int main()
 	cout << "Defense: " << me.getDefense() << endl;
 
 
-
     me.endFight(encounter(me2, enemy, Ogre2));
 
+    clearScreen(screenLen);
+
 	itemz stuff[itemNum];
+
+    /*
+    Save formatting for later
+	cout << "=         " << endl;
+	cout << "  \\       " << endl;
+    cout << "= = =     " << endl;
+    cout << "  /       " << endl;
+    cout << "=         " << endl;
+    */
 
 	stuff[2].setName("something");
 	stuff[1].setName("something else");
 
 	itemz *stuff2[itemNum];
 	stuff2[itemNum] = &stuff[itemNum];
+	cout << "Size: " << sizeof(stuff2)/sizeof(itemz);
+
+	stuff[1].buildItemList(itemNum);
 
 	//setItemList(itemNum, listOfItems, stuff2);
 
 	me.addItem(1);
-	me.listItems(stuff2);
-
-
+	me.listItems(stuff);
 
 	save(me);
-	cout << endl << "press any key to continue...\n";
-	cin >> x;
+	//cout << endl << "press any key to continue...\n";
+	//cin >> x;
     return 0;
 }
