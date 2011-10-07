@@ -35,43 +35,59 @@ void clearScreen(int len)
 
 
 /**
-cleanInt()
+cleanInt(int)
 
-BROKEN
+params:
+    Int: allows inputs from 1 to (int)
 
-no params
+status: Working, needs more.
 
-function is made to prompt for user input,
-and only allow a valid integer
+Function is made to prompt for user input,
+and only allow a valid integer.
+
+Default range is 1 to 2
 
 */
-int cleanInt()
+int cleanInt(int size = 0)
 {
-
     int a;
-    char out[10];
     int ch = 0;
 
-    while ((ch = getchar()) != '\n' && ch != EOF);
+    //This makes the default range 1-2
+    //Usually for the simple yes/no
+    if( size == 0 )
+    {
+        size = 2;
+    }
 
+    //Checks if its in the correct number range
     do
     {
-        a = NULL;
-
-        scanf("%d", &a);
-        cout << a << endl;
-        sprintf(out, "%d", a);
-
-        //Stolen off the internet. This clears out STDIN
-        //in case scanf fails.
-        while ((ch = getchar()) != '\n' && ch != EOF);
-
-        if( a == NULL )
+        //Checks if its actually an integer
+        do
         {
-            cout << "Invalid entry" << endl;
-        }
+            //Allows for easy looping, plus
+            //prevents any overflow from last iteration.
+            a = NULL;
 
-    }while (!isdigit(out[0]));
+            //Reads INT from STDIN.
+            scanf("%d", &a);
+
+            //Stolen off the internet. This clears out STDIN
+            //in case scanf fails.
+            //
+            //In the event scanf doesn't execute, it leaves the
+            //values in STDIN
+            while ((ch = getchar()) != '\n' && ch != EOF);
+
+            if( a == NULL )
+            {
+                cout << "Invalid entry" << endl;
+            }
+
+        }while ( a == NULL );
+
+    }while (a > size || a < 1);
 
     return a;
 }

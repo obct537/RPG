@@ -2,7 +2,7 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="General.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="677" topLine="45" />
+		<Cursor position="518" topLine="42" />
 	</File>
 	<File name="General.h" open="1" top="0" tabpos="11">
 		<Cursor position="171" topLine="0" />
@@ -26,7 +26,7 @@
 		<Cursor position="325" topLine="14" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="9">
-		<Cursor position="1858" topLine="57" />
+		<Cursor position="1797" topLine="63" />
 	</File>
 	<File name="player.cpp" open="1" top="0" tabpos="7">
 		<Cursor position="1288" topLine="59" />

@@ -74,12 +74,13 @@ int main()
 	//looking into a way to make decisions without a variable, so as to avoid scope/redundancy issues
 	//considering making a global decision function with a private var to do this
 	int yn;
-	yn = cleanInt();
+    yn = cleanInt();
+
 
 	int d = 0;
 	cout << "here" << endl;
-	scanf("%d", &d);
-	cout << "D " << d << endl;
+	//scanf("%d", &d);
+	//cout << "D " << d << endl;
 
     //clearScreen(screenLen);
 	nmeType Ogre;
