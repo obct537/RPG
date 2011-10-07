@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1317568423 source:/home/obct537/Desktop/RPG/General.cpp
+1317961535 source:/home/obct537/Desktop/RPG/General.cpp
 	<cstdlib>
 	<iostream>
 	<string>
@@ -13,7 +13,7 @@
 	<string>
 	<cmath>
 
-1317868881 source:/home/obct537/Desktop/RPG/combat.cpp
+1317872239 source:/home/obct537/Desktop/RPG/combat.cpp
 	<iostream>
 	<string>
 	<cmath>
@@ -49,7 +49,7 @@
 	<sstream>
 	"items.h"
 
-1317867177 source:/home/obct537/Desktop/RPG/main.cpp
+1317876118 source:/home/obct537/Desktop/RPG/main.cpp
 	<iostream>
 	<fstream>
 	<string>
@@ -60,7 +60,7 @@
 	"General.h"
 	"combat.h"
 
-1317568047 /home/obct537/Desktop/RPG/General.h
+1317875735 /home/obct537/Desktop/RPG/General.h
 	<iostream>
 	<string>
 

@@ -43,6 +43,27 @@ void doDamage(player *user, player *nme)
     }while( user->getHealth() > 0 && nme->getHealth() > 0 );
 }
 
+void genNme(player *a, player *b, double ran)
+{
+
+    b->chargen();
+
+	b->setLevel(a->getLevel() + ran);
+	cout << b->getLevel() << endl;
+
+
+	for (int i = 1; i <= b->getLevel(); i++)
+	{
+		double plusAtt = ceil(b->getAttack() + (b->getAttack() * (.05 + .005)));
+		double plusHea = ceil(b->getHealth() + (b->getHealth() * (.10 + .005)));
+		double plusDef = ceil(b->getDefense() + (b->getDefense() * (.05 + .005)));
+
+		b->setDefense(plusDef);
+		b->setAttack(plusAtt);
+		b->setHealth(plusHea);
+	}
+
+}
 
 double encounter(player *a, player b, nmeType *c)
 {
@@ -50,18 +71,11 @@ double encounter(player *a, player b, nmeType *c)
 	double ran;
 	int ran2;
 	double dMod = 8;
-	double point = b.getAttack();
 
 	int yn;
-	int opt;
 
-	double damage;
-	double defense;
-
-	//these numbers are just placeholders until we get the weapon/drop system functional
-	//and yes...they are obscenely unbalanced
-	double wepEff1 = 250;
-	double armRate2 = 250;
+    player *g = &b;
+    genNme(a,g, ran);
 
 	//===========================================================
 	//           important to remember in the future
@@ -73,36 +87,12 @@ double encounter(player *a, player b, nmeType *c)
     srand(now);
     rand();
 
-	do
-	{
 	ran = (rand() % 10 + 1 );
 	ran -= dMod;
-	} while ( ran < 1 );
-
 
 	ran2 = (rand() % 2 );
 
 	//===========================================================
-
-
-	//creates base for multiplication
-	b.chargen();
-
-	b.setLevel(a->getLevel() + ran);
-	cout << b.getLevel() << endl;
-
-
-	for (int i = 1; i <= b.getLevel(); i++)
-	{
-		double plusAtt = ceil(b.getAttack() + (b.getAttack() * (.05 + .005)));
-		double plusHea = ceil(b.getHealth() + (b.getHealth() * (.10 + .005)));
-		double plusDef = ceil(b.getDefense() + (b.getDefense() * (.05 + .005)));
-
-		b.setDefense(plusDef);
-		b.setAttack(plusAtt);
-		b.setHealth(plusHea);
-	}
-
 
 
 	cout << endl << "You've encountered a level " << b.getLevel() << " " << c->getName();
@@ -112,10 +102,10 @@ double encounter(player *a, player b, nmeType *c)
 	cout << endl << "1)Attack! \n2)Run Away!\n\n";
 	cin >> yn;
 
-
 	if (yn == 1)
 	{
 		cout << endl << "mkay\n";
+        doDamage(a, g);
 	}
 	else if (yn == 2)
 	{
@@ -126,12 +116,6 @@ double encounter(player *a, player b, nmeType *c)
 	{
 		cout << endl << "you suck";
 	}
-
-	opt = 1;
-
-    player *g = &b;
-    doDamage(a, g);
-
 
 	if ( a->getHealth() <= 0)
 	{
